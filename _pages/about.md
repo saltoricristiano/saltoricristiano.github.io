@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='cristiano.saltori@unitn.it'>email</a>, <a href=''>scholar</a>, 
+subtitle: PhD student @ <a href=''>University of Trento</a>, Trento, Italy
 
 profile:
   align: right

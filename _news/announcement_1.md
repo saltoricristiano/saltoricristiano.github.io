@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2023-7-18
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Our work <a href='https://arxiv.org/abs/2304.11705'>LiDOG</a> has been accepted at ICCV 2023!
