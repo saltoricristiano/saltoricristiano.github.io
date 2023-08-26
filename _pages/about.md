@@ -19,4 +19,4 @@ Hi! I'm Cristiano Saltori, an enthusiastic researcher in computer vision, artifi
 Currently, I'm pursuing a Ph.D. in deep learning for computer vision with a focus in 3D vision, perception, and domain adaptation.
 When not working, you will find me climbing or hiking on the mountains.
 
-This is my personal webpage and, through the years, I'll be uploading my career's steps, research discoveries, travels and news!
+This is my personal webpage and, through the years, I'll be uploading news, published and accepted papers, projects, travels and more!
