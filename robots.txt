@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://saltoricristiano.github.io/al-folio/sitemap.xml
+Sitemap: https://saltoricristiano.github.io/sitemap.xml
