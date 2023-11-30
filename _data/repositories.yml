@@ -1,8 +1,10 @@
 github_users:
+  - saltoricristiano
   - torvalds
   - alshedivat
 
 github_repos:
+  - saltoricristiano/saltoricristiano.github.io
   - alshedivat/al-folio
   - twbs/bootstrap
   - jekyll/jekyll
