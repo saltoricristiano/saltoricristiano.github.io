@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Research Intern @ <a href='https://europe.naverlabs.com'>NAVERLABS Europe</a>, PhD student @ <a href='https://www.disi.unitn.it'>University of Trento</a>, Trento, Italy
+subtitle: PhD student @ <a href='https://www.disi.unitn.it'>University of Trento</a>, Italy - Prev. Research Intern @ <a href='https://europe.naverlabs.com'>NAVERLABS Europe</a>, Visiting PhD @ <a href='https://dvl.in.tum.de/'>TUM - DVL</a>
 
 profile:
   align: right
