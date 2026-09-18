@@ -1,8 +1,10 @@
 # Cristiano Saltori — research website
 
-A lightweight Hugo website, prepared for **https://saltoricristiano.github.io/**. The design takes inspiration from [Benjamin Missaoui's website](https://www.benjamin-missaoui.me/) and the visual publication rows on [Shengyu Huang's website](https://shengyuh.github.io/).
+A lightweight Hugo website for [Cristiano Saltori](https://saltoricristiano.github.io/). The design takes inspiration from [Benjamin Missaoui's website](https://www.benjamin-missaoui.me/) and the visual publication rows on [Shengyu Huang's website](https://shengyuh.github.io/).
 
-The content is stored in Markdown and JSON. There is no Node.js dependency, database, or paid hosting requirement. Hugo builds a static website, and GitHub Actions publishes changes after you push them to `main` once Pages is enabled.
+The content is stored in Markdown and JSON. There is no Node.js dependency, database, or paid hosting requirement. Hugo builds a static website, and GitHub Actions publishes changes pushed to `main`.
+
+[Source repository](https://github.com/saltoricristiano/saltoricristiano.github.io) · [Deployment status](https://github.com/saltoricristiano/saltoricristiano.github.io/actions/workflows/pages.yml) · [Website](https://saltoricristiano.github.io/)
 
 ## Preview locally
 
@@ -85,17 +87,27 @@ Run the production build and validation commands before committing. For an accep
 
 After a new paper, role, talk, or award, edit the relevant content file, preview it, and commit the change. A brief monthly review is enough to catch stale links and missing publications. There is no scheduled task or automated content editing configured.
 
-## Publish with GitHub Pages
+## Deploy updates
 
-1. Create a **public** repository named `saltoricristiano.github.io` under the `saltoricristiano` account, or use it if it already exists. Check an existing repository's contents before uploading anything.
-2. Commit this website's source files and push them to the repository's `main` branch.
-3. In the repository, open **Settings → Pages** and select **GitHub Actions** as the source.
-4. In **Actions**, run **Build and deploy website** if the initial push happened before Pages was enabled. Later pushes to `main` start deployment automatically.
-5. Wait for the build and deployment to succeed, then visit **https://saltoricristiano.github.io/**.
+Work on `main`, which contains the current Hugo source. The previous website's history is preserved, and its historical `master` and `gh-pages` branches are retained for reference. New website edits and deployments use `main`.
+
+After editing the content and checking the local preview, update the footer date in `hugo.toml`, then build, validate, review, and publish:
+
+```sh
+hugo --gc --minify
+python3 scripts/validate.py
+git diff
+git status
+git add .
+git commit -m "Update research profile"
+git push origin main
+```
+
+Use a commit message that describes the actual update. A push starts **Build and deploy website** in [Actions](https://github.com/saltoricristiano/saltoricristiano.github.io/actions/workflows/pages.yml). Wait for both build and deployment to succeed, then check the [website](https://saltoricristiano.github.io/). A successful local build alone does not confirm publication.
 
 The included workflow downloads Hugo 0.122.0, builds the site, runs validation, uploads `public/`, and deploys that artifact using GitHub's official Pages actions. It uses the repository's built-in token; no personal access token needs to be stored in the website. Keep the `main` branch and the `github-pages` environment as the intended publishing destinations.
 
-The workflow file prepares deployment; its presence alone does not mean the site has been published. Check the repository's Actions result and live URL to confirm publication.
+The repository's **Settings → Pages → Source** should be **GitHub Actions**. To retry a deployment without a new commit, open the workflow in Actions, select **Run workflow**, and choose `main`. Do not upload generated files or push them to `gh-pages`; the workflow deploys the build artifact directly.
 
 For a project repository such as `research-website`, GitHub Pages uses `https://saltoricristiano.github.io/research-website/`. The workflow supplies GitHub's base URL automatically. Test this form locally before changing repositories:
 
@@ -108,6 +120,6 @@ A custom domain is optional and can be connected later. Follow [GitHub's custom-
 
 ## Sources and maintenance notes
 
-The biography is based on [Cristiano's NVIDIA DVL profile](https://research.nvidia.com/labs/dvl/author/cristiano-saltori/). Publication provenance is recorded in `PUBLICATION_SOURCES.md`. Keep metadata and images aligned with the corresponding paper or project sources, and retain source attribution when updating the assets.
+The biography uses Cristiano's approved wording, including his current [NVIDIA Spatial Intelligence Lab (SIL)](https://research.nvidia.com/labs/sil/) affiliation. `CONTENT_SOURCES.md` records supporting sources, historical CV details, and Cristiano's corrections to dates and experience. Publication provenance is recorded in `PUBLICATION_SOURCES.md`. Keep metadata and images aligned with the corresponding paper or project sources, and retain source attribution when updating the assets.
 
 Official deployment references: [Hugo on GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/) and [GitHub custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages). Action versions were checked against their official release pages when preparing this website. Review and test tool-version upgrades before changing the pinned versions in `.github/workflows/pages.yml`.
