@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="container standalone-page">
+  <a class="text-link" href="{{ "" | relURL }}#publications">← Back to publications</a>
+  <h1>{{ .Title }}</h1>
+  {{ if eq .Section "publications" }}
+  <p class="publication-venue">{{ .Params.venue }} · {{ .Params.year }}</p>
+  <p class="publication-authors">{{ delimit .Params.authors ", " }}</p>
+  {{ with .Params.image }}<img class="standalone-image" src="{{ . | relURL }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}
+  {{ with .Params.animation }}<p><a class="text-link" href="{{ . | relURL }}">View animated demo →</a></p>{{ end }}
+  <div class="paper-links">{{ with .Params.paper_url }}<a href="{{ . }}">Paper</a>{{ end }}{{ with .Params.code_url }}<a href="{{ . }}">Code</a>{{ end }}{{ with .Params.project_url }}<a href="{{ . }}">Project</a>{{ end }}</div>
+  {{ end }}
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ end }}

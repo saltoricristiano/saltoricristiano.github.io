@@ -1,0 +1,107 @@
+{
+  "name": "Cristiano Saltori",
+  "role": "Research Scientist",
+  "affiliation": "NVIDIA",
+  "group": "Spatial Intelligence Lab (SIL)",
+  "group_url": "https://research.nvidia.com/labs/sil/",
+  "topics": [
+    "Artificial intelligence",
+    "Computer vision",
+    "Perception",
+    "Autonomous vehicles"
+  ],
+  "portrait": "images/cristiano-saltori.jpg",
+  "email": "",
+  "cv": "",
+  "links": [
+    {
+      "label": "Google Scholar",
+      "icon": "scholar",
+      "url": "https://scholar.google.com/citations?user=PID7Z4oAAAAJ"
+    },
+    {
+      "label": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/saltoricristiano"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/cristianosaltori/"
+    },
+    {
+      "label": "X",
+      "icon": "x",
+      "url": "https://x.com/CristianoSalto"
+    }
+  ],
+  "interests": [
+    "3D computer vision",
+    "LiDAR & camera perception",
+    "Foundation & world models",
+    "Autonomous driving & robotics",
+    "3D reconstruction"
+  ],
+  "education": [
+    {
+      "degree": "PostDoc, NVIDIA",
+      "detail": "Multimodal perception & reconstruction",
+      "period": "2024 – 2026",
+      "url": "https://research.nvidia.com/"
+    },
+    {
+      "degree": "PhD, University of Trento",
+      "detail": "Deep Learning for Computer Vision · cum laude",
+      "period": "Nov 2019 – Apr 2024",
+      "url": "https://mhug.disi.unitn.it/"
+    },
+    {
+      "degree": "MSc, University of Trento",
+      "detail": "Information and Communications Engineering · cum laude",
+      "period": "Sep 2017 – Oct 2019",
+      "url": "https://www.unitn.it/"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Scientist",
+      "organization": "NVIDIA",
+      "period": "2026 – Present",
+      "url": "https://research.nvidia.com/labs/sil/",
+      "description": "Work on perception, reconstruction, and foundation models for autonomous vehicles in the Spatial Intelligence Lab (SIL), contributing to internal products and research publications. Supervise research interns.",
+      "logo": "images/institutions/nvidia.svg"
+    },
+    {
+      "role": "Postdoctoral Researcher",
+      "organization": "NVIDIA",
+      "period": "2024 – 2026",
+      "url": "https://research.nvidia.com/",
+      "description": "Researched multimodal 2D, 3D, and 4D perception and reconstruction across research and product projects. Co-supervised Complete Anything in LiDAR, from implementation and research to paper writing, and contributed to efficient multi-camera tokenization for autonomous driving.",
+      "logo": "images/institutions/nvidia.svg"
+    },
+    {
+      "role": "PhD Research Intern",
+      "organization": "NAVER LABS Europe",
+      "period": "Apr 2023 – Oct 2023",
+      "url": "https://europe.naverlabs.com/",
+      "description": "Investigated multimodal perception and knowledge transfer across dense and sparse recognition tasks in the Vision Representation Learning team, supervised by Riccardo Volpi and Yannis Kalantidis. Received the NAVER LABS Europe Intern Day Distinguished Award for the multitask learning project.",
+      "logo": "images/institutions/naver-labs-europe.png"
+    },
+    {
+      "role": "Visiting PhD Researcher",
+      "organization": "Technical University of Munich",
+      "period": "Mar 2022 – Nov 2022",
+      "url": "https://dvl.in.tum.de/",
+      "description": "Developed 3D perception methods that remain robust across different domains and environments, under the supervision of Laura Leal-Taixé and Aljoša Ošep.",
+      "logo": "images/institutions/tum.svg"
+    },
+    {
+      "role": "PhD Researcher",
+      "organization": "University of Trento",
+      "period": "Nov 2019 – Apr 2024",
+      "url": "https://mhug.disi.unitn.it/",
+      "description": "Studied 3D point-cloud perception under distribution shifts and limited supervision, including self-supervised representation learning and novel-class discovery. Completed a PhD in Deep Learning for Computer Vision, cum laude, advised by Elisa Ricci, Nicu Sebe, and Fabio Galasso.",
+      "logo": "images/institutions/unitn.svg"
+    }
+  ]
+}

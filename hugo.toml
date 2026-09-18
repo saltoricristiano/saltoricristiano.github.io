@@ -1,0 +1,25 @@
+baseURL = 'https://saltoricristiano.github.io/'
+languageCode = 'en'
+title = 'Cristiano Saltori | Research Scientist'
+disableKinds = ['taxonomy', 'term', 'RSS']
+enableRobotsTXT = true
+buildDrafts = false
+
+[params]
+  description = 'Cristiano Saltori is a Research Scientist at NVIDIA Spatial Intelligence Lab (SIL), working on artificial intelligence, computer vision, perception, and autonomous vehicles.'
+  updated = '2026-09-18'
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[imaging]
+  quality = 85
+
+# Make local images available to Hugo's thumbnail processor as well as static files.
+[[module.mounts]]
+  source = 'static/images'
+  target = 'assets/images'
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.5

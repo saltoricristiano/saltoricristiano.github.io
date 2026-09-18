@@ -1,0 +1,26 @@
+<article class="publication" data-featured="{{ .Params.featured | default false }}" aria-labelledby="title-{{ .File.ContentBaseName }}-{{ .File.UniqueID }}">
+  <div class="publication-media">
+  <a class="publication-image" href="{{ .Params.project_url | default .Params.paper_url }}" tabindex="-1" aria-hidden="true">
+    {{ with .Params.image }}
+      {{ $imageURL := . | relURL }}
+      {{ with resources.Get . }}{{ $thumbnail := .Fit "480x320" }}{{ $imageURL = $thumbnail.RelPermalink }}{{ end }}
+      <img id="teaser-{{ $.File.UniqueID }}" src="{{ $imageURL }}" {{ with $.Params.animation }}data-animation="{{ . | relURL }}"{{ end }} alt="" loading="lazy" width="240" height="160">
+    {{ else }}<div class="publication-placeholder"><span>{{ .Params.venue }}</span><span>{{ .Params.year }}</span></div>{{ end }}
+  </a>
+  {{ with .Params.animation }}
+    <button class="animation-toggle" type="button" data-title="{{ $.Title }}" aria-label="Play animated demo for {{ $.Title }}" {{ with $.Params.animation_alt }}aria-description="{{ . }}"{{ end }} aria-controls="teaser-{{ $.File.UniqueID }}" aria-pressed="false" hidden><span aria-hidden="true">▶</span> Play demo</button>
+    <noscript><a class="animation-link" href="{{ . | relURL }}">View animated demo</a></noscript>
+  {{ end }}
+  </div>
+  <div class="publication-body">
+    <p class="publication-venue" title="{{ .Params.venue }}">{{ replaceRE "^.*\\(([^()]*)\\)$" "$1" .Params.venue }} <span>· {{ .Params.year }}</span>{{ with .Params.award }}<span class="publication-award">{{ . }}</span>{{ end }}</p>
+    <h3 id="title-{{ .File.ContentBaseName }}-{{ .File.UniqueID }}"><a href="{{ .Params.paper_url }}">{{ .Title }}</a></h3>
+    <p class="publication-authors">{{ range $i, $author := .Params.authors }}{{ if $i }}, {{ end }}{{ if in $author "Cristiano Saltori" }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}</p>
+    <div class="paper-links">
+      {{ with .Params.paper_url }}<a href="{{ . }}">Paper</a>{{ end }}
+      {{ with .Params.code_url }}<a href="{{ . }}">Code</a>{{ end }}
+      {{ with .Params.project_url }}<a href="{{ . }}">Project</a>{{ end }}
+      {{ with .Params.bibtex }}<details class="citation"><summary>BibTeX</summary><div class="citation-content"><pre><code>{{ . }}</code></pre><button type="button" class="copy-citation" hidden>{{ partial "icon.html" "copy" }} Copy citation</button></div></details>{{ end }}
+    </div>
+  </div>
+</article>
